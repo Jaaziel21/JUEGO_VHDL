@@ -6,6 +6,7 @@ use ieee.std_logic_1164.all;
 entity PANTALLA_VGA is
 	
 	port ( CLK, RST, START : in std_logic;
+			 IZQ, DER, RESET : in std_logic;
 			 VSYNC, HSYNC : out std_logic;
 			 R, G, B : out std_logic_vector ( 3 downto 0) );
 	
@@ -73,6 +74,7 @@ architecture RTL of PANTALLA_VGA is
 	
 				port ( CONT800, CONT525 : in std_logic_vector (9 downto 0);	-- Entradas
 						 CLK : in std_logic;
+						 IZQ, DER, RESET : in std_logic;
 						 HST, VST : in std_logic_vector (1 downto 0);			-- Salidas
 						 R, G, B : out std_logic_vector ( 3 downto 0) );
 						 
@@ -91,11 +93,11 @@ architecture RTL of PANTALLA_VGA is
 	
 	begin
 	
-		DIV	: divisor_frecuencia 	port map ( CLK, RST, CLK_DIV );
+		DIV	: divisor_frecuencia port map ( CLK, RST, CLK_DIV );
 		C800	: contador800 	port map	( CLK_DIV, RST, START, CUENTA800, OV );
 		C525	: contador500	port map ( OV, RST, START, CUENTA525, HZ );
 		VERT	: V_SYNC		port map ( CLK_DIV, RST, START, CUENTA525, VSYNC, VSYNCST);
 		HOR	: H_SYNC		port map ( CLK_DIV, RST, START, CUENTA800, HSYNC, HSYNCST);
-		DIB	: FIGURA		port map	( CUENTA800, CUENTA525, HZ, HSYNCST, VSYNCST, R, G, B );
+		DIB	: FIGURA		port map	( CUENTA800, CUENTA525, HZ, IZQ, DER, RESET, HSYNCST, VSYNCST, R, G, B );
 	
 end architecture;
