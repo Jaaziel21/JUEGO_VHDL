@@ -10,7 +10,7 @@ entity FIGURA is
 	
 	port ( CONT800, CONT525 : in std_logic_vector (9 downto 0);	-- Entradas
 			 CLK : in std_logic;
-			 IZQ, DER : in std_logic;
+			 IZQ, DER, RESET : in std_logic;
 			 HST, VST : in std_logic_vector (1 downto 0);			-- Salidas
 			 R, G, B : out std_logic_vector ( 3 downto 0) );
 	
@@ -99,36 +99,61 @@ constant LADRILLO18_X : std_logic_vector(9 downto 0) := "1011000000";  -- Bloque
 constant LADRILLO18_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 2
 
 -- Fila 3
---constant LADRILLO11_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 11 (primera columna)
---constant LADRILLO11_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
 
---constant LADRILLO12_X : std_logic_vector(9 downto 0) := "0110000000";  -- Bloque 12 (segunda columna)
---constant LADRILLO12_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
+constant LADRILLO19_X : std_logic_vector(9 downto 0) := "0011000000";  -- Bloque 19 (primera columna)
+constant LADRILLO19_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
 
---constant LADRILLO13_X : std_logic_vector(9 downto 0) := "0111000000";  -- Bloque 13 (tercera columna)
---constant LADRILLO13_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
+constant LADRILLO20_X : std_logic_vector(9 downto 0) := "0100000000";  -- Bloque 19 (segunda columna)
+constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
 
---constant LADRILLO14_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 14 (cuarta columna)
---constant LADRILLO14_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila
+constant LADRILLO21_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 11 (primera columna)
+constant LADRILLO21_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
 
---constant LADRILLO15_X : std_logic_vector(9 downto 0) := "1001000000";  -- Bloque 15 (quinta columna)
---constant LADRILLO15_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
+constant LADRILLO22_X : std_logic_vector(9 downto 0) := "0110000000";  -- Bloque 12 (segunda columna)
+constant LADRILLO22_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
+
+constant LADRILLO23_X : std_logic_vector(9 downto 0) := "0111000000";  -- Bloque 13 (tercera columna)
+constant LADRILLO23_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
+
+constant LADRILLO24_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 14 (cuarta columna)
+constant LADRILLO24_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila
+
+constant LADRILLO25_X : std_logic_vector(9 downto 0) := "1001000000";  -- Bloque 15 (quinta columna)
+constant LADRILLO25_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
+
+constant LADRILLO26_X : std_logic_vector(9 downto 0) := "1010000000";  -- Bloque 14 (cuarta columna)
+constant LADRILLO26_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila
+
+constant LADRILLO27_X : std_logic_vector(9 downto 0) := "1011000000";  -- Bloque 15 (quinta columna)
+constant LADRILLO27_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
 
 -- Fila 4
---constant LADRILLO16_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 16 (primera columna)
---constant LADRILLO16_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
+constant LADRILLO28_X : std_logic_vector(9 downto 0) := "0011000000";  -- Bloque 16 (primera columna)
+constant LADRILLO28_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 
---constant LADRILLO17_X : std_logic_vector(9 downto 0) := "0110000000";  -- Bloque 17 (segunda columna)
---constant LADRILLO17_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
+constant LADRILLO29_X : std_logic_vector(9 downto 0) := "0100000000";  -- Bloque 17 (segunda columna)
+constant LADRILLO29_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 
---constant LADRILLO18_X : std_logic_vector(9 downto 0) := "0111000000";  -- Bloque 18 (tercera columna)
---constant LADRILLO18_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
+constant LADRILLO30_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 16 (primera columna)
+constant LADRILLO30_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 
-constant LADRILLO19_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 19 (cuarta columna)
-constant LADRILLO19_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
+constant LADRILLO31_X : std_logic_vector(9 downto 0) := "0110000000";  -- Bloque 17 (segunda columna)
+constant LADRILLO31_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 
-constant LADRILLO20_X : std_logic_vector(9 downto 0) := "1001000000";  -- Bloque 20 (quinta columna)
-constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
+constant LADRILLO32_X : std_logic_vector(9 downto 0) := "0111000000";  -- Bloque 18 (tercera columna)
+constant LADRILLO32_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
+
+constant LADRILLO33_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 19 (cuarta columna)
+constant LADRILLO33_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
+
+constant LADRILLO34_X : std_logic_vector(9 downto 0) := "1001000000";  -- Bloque 20 (quinta columna)
+constant LADRILLO34_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
+
+constant LADRILLO35_X : std_logic_vector(9 downto 0) := "1010000000";  -- Bloque 19 (cuarta columna)
+constant LADRILLO35_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
+
+constant LADRILLO36_X : std_logic_vector(9 downto 0) := "1011000000";  -- Bloque 20 (quinta columna)
+constant LADRILLO36_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 
 	
 	constant LADRILLO_ANCHO : std_logic_vector(9 downto 0) := "0000100000"; -- Ancho del bloque
@@ -141,8 +166,8 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
    signal direccion_y : std_logic := '1'; -- '1' para abajo, 0 para arriba
 	
 	-- ladrillos
-	signal ladrillo_presente : std_logic := '1'; -- '1' indica que el ladrillo está presente
-	signal ladrillo1_presente : std_logic := '1';
+	
+	signal ladrillo1_presente : std_logic := '1'; -- '1' indica que el ladrillo está presente
    signal ladrillo2_presente : std_logic := '1';
    signal ladrillo3_presente : std_logic := '1';
    signal ladrillo4_presente : std_logic := '1';
@@ -162,9 +187,27 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
    signal ladrillo18_presente : std_logic := '1';
    signal ladrillo19_presente : std_logic := '1';
    signal ladrillo20_presente : std_logic := '1';
+	signal ladrillo21_presente : std_logic := '1';
+   signal ladrillo22_presente : std_logic := '1';
+   signal ladrillo23_presente : std_logic := '1';
+   signal ladrillo24_presente : std_logic := '1';
+   signal ladrillo25_presente : std_logic := '1';
+	signal ladrillo26_presente : std_logic := '1';
+   signal ladrillo27_presente : std_logic := '1';
+   signal ladrillo28_presente : std_logic := '1';
+   signal ladrillo29_presente : std_logic := '1';
+   signal ladrillo30_presente : std_logic := '1';
+	signal ladrillo31_presente : std_logic := '1';
+   signal ladrillo32_presente : std_logic := '1';
+   signal ladrillo33_presente : std_logic := '1';
+   signal ladrillo34_presente : std_logic := '1';
+   signal ladrillo35_presente : std_logic := '1';
+	signal ladrillo36_presente : std_logic := '1';
 	
 	signal ha_perdido : std_logic := '1';
 	signal pelota_en_espera : std_logic := '1';
+	
+	signal vidas : integer := 3;
 	
 	
 	
@@ -177,7 +220,7 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 		RAQUETA : process (CLK, DER, IZQ, movH)
 		begin
 			-- Actualizar la posición de la raqueta cada 60Hz
-			if (CLK'EVENT and CLK = '1') then
+			if (CLK'EVENT and CLK = '1') and vidas > 0  and RESET = '0' then
 				if (DER = '0') and (movH <= "1011010000") then
 					movH <= movH + 5;
 				elsif (IZQ = '0') and (movH >= limizq) then
@@ -193,12 +236,60 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 			-- Actualizar la posición de la pelota cada 60Hz
 			if (CLK'EVENT and CLK = '1') then
 			
+				-- Verificar si el switch de reinicio está activado
+				if (RESET = '1') then
+            -- Reiniciar la posición y dirección de la pelota
+						mov_x <= "0111001111";  -- Posición inicial en el centro
+						mov_y <= "0100000000";
+						direccion_x <= '0';  -- Dirección inicial hacia la derecha
+						direccion_y <= '0';  -- Dirección inicial hacia abajo
+						vidas <= 3;  -- Restaurar las vidas a 3
+						
+						ladrillo1_presente <= '1'; -- '1' indica que el ladrillo está presente
+						ladrillo2_presente <= '1';
+						ladrillo3_presente <= '1';
+						ladrillo4_presente <= '1';
+						ladrillo5_presente <= '1';
+						ladrillo6_presente <= '1';
+						ladrillo7_presente <= '1';
+						ladrillo8_presente <= '1';
+						ladrillo9_presente <= '1';
+						ladrillo10_presente <= '1';
+						ladrillo11_presente <= '1';
+						ladrillo12_presente <= '1';
+						ladrillo13_presente <= '1';
+						ladrillo14_presente <= '1';
+						ladrillo15_presente <= '1';
+						ladrillo16_presente <= '1';
+						ladrillo17_presente <= '1';
+						ladrillo18_presente <= '1';
+						ladrillo19_presente <= '1';
+						ladrillo20_presente <= '1';
+						ladrillo21_presente <= '1';
+						ladrillo22_presente <= '1';
+						ladrillo23_presente <= '1';
+						ladrillo24_presente <= '1';
+						ladrillo25_presente <= '1';
+						ladrillo26_presente <= '1';
+						ladrillo27_presente <= '1';
+						ladrillo28_presente <= '1';
+						ladrillo29_presente <= '1';
+						ladrillo30_presente <= '1';
+						ladrillo31_presente <= '1';
+						ladrillo32_presente <= '1';
+						ladrillo33_presente <= '1';
+						ladrillo34_presente <= '1';
+						ladrillo35_presente <= '1';
+						ladrillo36_presente <= '1';
+						
+				else
+			
 			 if pelota_en_espera = '1' and (IZQ = '0' or DER = '0') then
 					pelota_en_espera <= '0'; -- La pelota ya no está en espera
 					direccion_y <= '0';
           end if;
 			 
-				if pelota_en_espera = '0' then
+				if pelota_en_espera = '0' and vidas > 0 then
 				
 				-- Movimiento sobre el plano horizontal
 					if (direccion_x = '1') then
@@ -227,6 +318,7 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 							mov_y <= "0111001111"; 
 							direccion_y <= '0';
 							pelota_en_espera <= '1';
+							vidas <= vidas - 1;
 						end if;
 						
 					else
@@ -566,43 +658,9 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 								
 						 end if;
 						 
-					elsif ladrillo19_presente = '1' and
-			  
-                   (mov_x + "0000010000" > LADRILLO19_X and mov_x < LADRILLO19_X + LADRILLO_ANCHO and
-                   mov_y + "0000010000" > LADRILLO19_Y and mov_y < LADRILLO19_Y + LADRILLO_ALTO) then
+					end if; 
 						 
-                   ladrillo19_presente <= '0'; 
-                   direccion_y <= not direccion_y;
-						 
-						 if mov_x + "0000001000" < LADRILLO19_X + "0000011000" then
-						 
-								direccion_x <= '0';  -- Rebote hacia la izquierda
-								
-						 elsif mov_x + "0000001000" > LADRILLO19_X + "0000101000" then
-						 
-								direccion_x <= '1';  -- Rebote hacia la derecha
-								
-						 end if;
-						 
-					elsif ladrillo20_presente = '1' and
-			  
-                   (mov_x + "0000010000" > LADRILLO20_X and mov_x < LADRILLO20_X + LADRILLO_ANCHO and
-                   mov_y + "0000010000" > LADRILLO20_Y and mov_y < LADRILLO20_Y + LADRILLO_ALTO) then
-						 
-                   ladrillo20_presente <= '0'; 
-                   direccion_y <= not direccion_y;	 
-						 
-						 if mov_x + "0000001000" < LADRILLO20_X + "0000011000" then
-						 
-								direccion_x <= '0';  -- Rebote hacia la izquierda
-								
-						 elsif mov_x + "0000001000" > LADRILLO20_X + "0000101000" then
-						 
-								direccion_x <= '1';  -- Rebote hacia la derecha
-								
-						 end if;
-						 
-					end if;
+					
 				
 ----------------------  Rebote de la pelota con la Raqueta -----------------------------------------------------------------------------------	
 				
@@ -633,7 +691,7 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 							else
 								mov_x <= mov_x - 1; 
 							end if;
-            
+            end if;
 					end if;
     end if;
 				end if;
@@ -647,6 +705,9 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 		PANTALLA : process (CONT800, CONT525, HST, VST)
 		begin
 			 if (HST = "10" and VST = "10") then
+			 
+				if vidas > 0 then
+				
 				  if ((CONT800 > ZV800I and CONT800 < ZV800F) and (CONT525 > ZV525I AND CONT525 < ZV525F)) then
 						-- Verificar si la posición actual de la raqueta está dentro del plano horizontal
 						if ((CONT800 > movH and CONT800 < movH + "0001000000") and (CONT525 > "0111100011" and CONT525 < "0111110011")) then
@@ -750,15 +811,6 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 								G <= "0011";
 								B <= "1111";	
 								
-						elsif ladrillo19_presente = '1' and (CONT800 > LADRILLO19_X and CONT800 < LADRILLO19_X + LADRILLO_ANCHO and CONT525 > LADRILLO19_Y and CONT525 < LADRILLO19_Y + LADRILLO_ALTO) then
-								R <= "1001";
-								G <= "1101";
-								B <= "1011";	
-								
-						elsif ladrillo20_presente = '1' and (CONT800 > LADRILLO20_X and CONT800 < LADRILLO20_X + LADRILLO_ANCHO and CONT525 > LADRILLO20_Y and CONT525 < LADRILLO20_Y + LADRILLO_ALTO) then
-								R <= "1010";
-								G <= "0101";
-								B <= "1111";	
 						else
 							 R <= "0000";  -- Color negro para el fondo
 							 G <= "0000";
@@ -768,7 +820,22 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 						R <= "0000";  -- Color negro para áreas fuera del fondo
 						G <= "0000";
 						B <= "0000";
-				  end if; 
+					end if;
+						
+				else  
+					-- Mostrar "Game Over" en el centro de la pantalla
+					if (CONT800 > "0100100000" and CONT800 < "0101100000" and
+						CONT525 > "0011100000" and CONT525 < "0100100000") then
+							R <= "1111"; -- Color rojo para el mensaje
+							G <= "0000";
+							B <= "0000";
+					else
+							R <= "0000"; -- Color negro para el fondo
+							G <= "0000";
+							B <= "0000";
+					end if;
+					
+				end if; 
 			 end if;
 		end process PANTALLA;
 
