@@ -21,9 +21,6 @@ void setup() {
     Serial.println("Error al iniciar el IMU!");
     while (1);
   }
-  Serial.print("Accelerometer sample rate = ");
-  Serial.print(IMU.gyroscopeSampleRate());
-  Serial.println(" Hz");
 }
 
 void loop() {
@@ -31,10 +28,6 @@ void loop() {
   if (IMU.accelerationAvailable()) 
   {
     IMU.readAcceleration(x, y, z);
-
-    //if (x > -0.49 && x < 0.49) {
-      
-    //}
 
     Serial.println(x);
     if(x > 0.2){
