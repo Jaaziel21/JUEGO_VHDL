@@ -42,71 +42,96 @@ architecture RTL of FIGURA is
 	
 	-- Ladrillos
 -- Fila 1
-constant LADRILLO1_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 1 (primera columna)
+constant LADRILLO1_X : std_logic_vector(9 downto 0) := "0011000000";  -- Bloque 1 (primera columna)
 constant LADRILLO1_Y : std_logic_vector(9 downto 0) := "0001000000";  -- Fila 1
 
-constant LADRILLO2_X : std_logic_vector(9 downto 0) := "0101110000";  -- Bloque 2 (segunda columna)
+constant LADRILLO2_X : std_logic_vector(9 downto 0) := "0100000000";  -- Bloque 2 (segunda columna)
 constant LADRILLO2_Y : std_logic_vector(9 downto 0) := "0001000000";  -- Fila 1
 
-constant LADRILLO3_X : std_logic_vector(9 downto 0) := "0110100000";  -- Bloque 3 (tercera columna)
+constant LADRILLO3_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 3 (tercera columna)
 constant LADRILLO3_Y : std_logic_vector(9 downto 0) := "0001000000";  -- Fila 1
 
-constant LADRILLO4_X : std_logic_vector(9 downto 0) := "0111010000";  -- Bloque 4 (cuarta columna)
+constant LADRILLO4_X : std_logic_vector(9 downto 0) := "0110000000";  -- Bloque 4 (cuarta columna)
 constant LADRILLO4_Y : std_logic_vector(9 downto 0) := "0001000000";  -- Fila 1
 
-constant LADRILLO5_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 5 (quinta columna)
+constant LADRILLO5_X : std_logic_vector(9 downto 0) := "0111000000";  -- Bloque 5 (quinta columna)
 constant LADRILLO5_Y : std_logic_vector(9 downto 0) := "0001000000";  -- Fila 1
 
+constant LADRILLO6_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 6 (sexta columna)
+constant LADRILLO6_Y : std_logic_vector(9 downto 0) := "0001000000";  -- Fila 1
+
+constant LADRILLO7_X : std_logic_vector(9 downto 0) := "1001000000";  -- Bloque 7 (septima columna)
+constant LADRILLO7_Y : std_logic_vector(9 downto 0) := "0001000000";  -- Fila 1
+
+constant LADRILLO8_X : std_logic_vector(9 downto 0) := "1010000000";  -- Bloque 8 (octava columna)
+constant LADRILLO8_Y : std_logic_vector(9 downto 0) := "0001000000";  -- Fila 1
+
+constant LADRILLO9_X : std_logic_vector(9 downto 0) := "1011000000";  -- Bloque 9 (novena columna)
+constant LADRILLO9_Y : std_logic_vector(9 downto 0) := "0001000000";  -- Fila 1
+
+
 -- Fila 2
-constant LADRILLO6_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 6 (primera columna)
-constant LADRILLO6_Y : std_logic_vector(9 downto 0) := "0001010000";  -- Fila 2
+constant LADRILLO10_X : std_logic_vector(9 downto 0) := "0011000000";  -- Bloque 10 (primera columna)
+constant LADRILLO10_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 2
 
-constant LADRILLO7_X : std_logic_vector(9 downto 0) := "0101110000";  -- Bloque 7 (segunda columna)
-constant LADRILLO7_Y : std_logic_vector(9 downto 0) := "0001010000";  -- Fila 2
+constant LADRILLO11_X : std_logic_vector(9 downto 0) := "0100000000";  -- Bloque 11 (segunda columna)
+constant LADRILLO11_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 2
 
-constant LADRILLO8_X : std_logic_vector(9 downto 0) := "0110100000";  -- Bloque 8 (tercera columna)
-constant LADRILLO8_Y : std_logic_vector(9 downto 0) := "0001010000";  -- Fila 2
+constant LADRILLO12_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 12 (tercera columna)
+constant LADRILLO12_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 2
 
-constant LADRILLO9_X : std_logic_vector(9 downto 0) := "0111010000";  -- Bloque 9 (cuarta columna)
-constant LADRILLO9_Y : std_logic_vector(9 downto 0) := "0001010000";  -- Fila 2
+constant LADRILLO13_X : std_logic_vector(9 downto 0) := "0110000000";  -- Bloque 13 (cuarta columna)
+constant LADRILLO13_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 2
 
-constant LADRILLO10_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 10 (quinta columna)
-constant LADRILLO10_Y : std_logic_vector(9 downto 0) := "0001010000";  -- Fila 2
+constant LADRILLO14_X : std_logic_vector(9 downto 0) := "0111000000";  -- Bloque 14 (quinta columna)
+constant LADRILLO14_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 2
+
+constant LADRILLO15_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 15 (sexta columna)
+constant LADRILLO15_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 2
+
+constant LADRILLO16_X : std_logic_vector(9 downto 0) := "1001000000";  -- Bloque 16 (septima columna)
+constant LADRILLO16_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 2
+
+constant LADRILLO17_X : std_logic_vector(9 downto 0) := "1010000000";  -- Bloque 17 (octava columna)
+constant LADRILLO17_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 2
+
+constant LADRILLO18_X : std_logic_vector(9 downto 0) := "1011000000";  -- Bloque 18 (novena columna)
+constant LADRILLO18_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 2
 
 -- Fila 3
-constant LADRILLO11_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 11 (primera columna)
-constant LADRILLO11_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 3
+--constant LADRILLO11_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 11 (primera columna)
+--constant LADRILLO11_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
 
-constant LADRILLO12_X : std_logic_vector(9 downto 0) := "0101110000";  -- Bloque 12 (segunda columna)
-constant LADRILLO12_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 3
+--constant LADRILLO12_X : std_logic_vector(9 downto 0) := "0110000000";  -- Bloque 12 (segunda columna)
+--constant LADRILLO12_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
 
-constant LADRILLO13_X : std_logic_vector(9 downto 0) := "0110100000";  -- Bloque 13 (tercera columna)
-constant LADRILLO13_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 3
+--constant LADRILLO13_X : std_logic_vector(9 downto 0) := "0111000000";  -- Bloque 13 (tercera columna)
+--constant LADRILLO13_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
 
-constant LADRILLO14_X : std_logic_vector(9 downto 0) := "0111010000";  -- Bloque 14 (cuarta columna)
-constant LADRILLO14_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 3
+--constant LADRILLO14_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 14 (cuarta columna)
+--constant LADRILLO14_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila
 
-constant LADRILLO15_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 15 (quinta columna)
-constant LADRILLO15_Y : std_logic_vector(9 downto 0) := "0001100000";  -- Fila 3
+--constant LADRILLO15_X : std_logic_vector(9 downto 0) := "1001000000";  -- Bloque 15 (quinta columna)
+--constant LADRILLO15_Y : std_logic_vector(9 downto 0) := "0010000000";  -- Fila 3
 
 -- Fila 4
-constant LADRILLO16_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 16 (primera columna)
-constant LADRILLO16_Y : std_logic_vector(9 downto 0) := "0001110000";  -- Fila 4
+--constant LADRILLO16_X : std_logic_vector(9 downto 0) := "0101000000";  -- Bloque 16 (primera columna)
+--constant LADRILLO16_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 
-constant LADRILLO17_X : std_logic_vector(9 downto 0) := "0101110000";  -- Bloque 17 (segunda columna)
-constant LADRILLO17_Y : std_logic_vector(9 downto 0) := "0001110000";  -- Fila 4
+--constant LADRILLO17_X : std_logic_vector(9 downto 0) := "0110000000";  -- Bloque 17 (segunda columna)
+--constant LADRILLO17_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 
-constant LADRILLO18_X : std_logic_vector(9 downto 0) := "0110100000";  -- Bloque 18 (tercera columna)
-constant LADRILLO18_Y : std_logic_vector(9 downto 0) := "0001110000";  -- Fila 4
+--constant LADRILLO18_X : std_logic_vector(9 downto 0) := "0111000000";  -- Bloque 18 (tercera columna)
+--constant LADRILLO18_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 
-constant LADRILLO19_X : std_logic_vector(9 downto 0) := "0111010000";  -- Bloque 19 (cuarta columna)
-constant LADRILLO19_Y : std_logic_vector(9 downto 0) := "0001110000";  -- Fila 4
+constant LADRILLO19_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 19 (cuarta columna)
+constant LADRILLO19_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 
-constant LADRILLO20_X : std_logic_vector(9 downto 0) := "1000000000";  -- Bloque 20 (quinta columna)
-constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0001110000";  -- Fila 4
+constant LADRILLO20_X : std_logic_vector(9 downto 0) := "1001000000";  -- Bloque 20 (quinta columna)
+constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 
 	
-	constant LADRILLO_ANCHO : std_logic_vector(9 downto 0) := "0000110000"; -- Ancho del bloque
+	constant LADRILLO_ANCHO : std_logic_vector(9 downto 0) := "0000100000"; -- Ancho del bloque
    constant LADRILLO_ALTO : std_logic_vector(9 downto 0) := "0000010000"; -- Alto del bloque
 
 	-- Pelota y ladrillos
@@ -743,7 +768,7 @@ constant LADRILLO20_Y : std_logic_vector(9 downto 0) := "0001110000";  -- Fila 4
 						R <= "0000";  -- Color negro para áreas fuera del fondo
 						G <= "0000";
 						B <= "0000";
-				  end if;
+				  end if; 
 			 end if;
 		end process PANTALLA;
 
