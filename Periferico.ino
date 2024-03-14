@@ -29,32 +29,26 @@ void loop() {
   {
     IMU.readAcceleration(x, y, z);
 
-    Serial.println(x);
     if(x > 0.2){
       x = 100*x;
       gradosX = map(x, 0, 97, 0, 90);
-      Serial.print("Tilting up ");
-      Serial.print(gradosX);
-      Serial.println("  degrees");
       digitalWrite(izquierdaPin, HIGH);
       digitalWrite(derechaPin, LOW);
-      Serial.println("izquierda");
+      Serial.println("Izquierda");
       Serial.println(digitalRead(izquierdaPin));
       Serial.println(digitalRead(derechaPin));
     }
     else if(x < -0.2){
       x = 100*x;
       gradosX = map(x, 0, -100, 0, 90);
-      Serial.print("Tilting down ");
-      Serial.print(gradosX);
-      Serial.println("  degrees");
       digitalWrite(derechaPin, HIGH);
       digitalWrite(izquierdaPin, LOW);
-      Serial.println("derecha");
+      Serial.println("Derecha");
       Serial.println(digitalRead(izquierdaPin));
       Serial.println(digitalRead(derechaPin));
     }
     else {
+      Serial.println("Detenido");
       digitalWrite(izquierdaPin, LOW);
       digitalWrite(derechaPin, LOW);
     }
