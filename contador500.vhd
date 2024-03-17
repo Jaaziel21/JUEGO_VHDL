@@ -1,3 +1,8 @@
+-- Contador de pixeles (525) en el plano vertical para un esquema de 640x480 pixeles
+-- Leyberth Jaaziel Castillo Guerra	A01749505
+-- Maximiliano De La Cruz Lima	A01798048
+-- TE2002B
+
 -- Librerías
 library ieee;
 use ieee.std_logic_1164.all;

@@ -1,3 +1,8 @@
+-- Sumador de 1 para los contadores
+-- Maximiliano De La Cruz Lima	A01798048
+-- Leyberth Jaaziel Castillo Guerra	A01749505
+-- TE2002B
+
 -- Librerías
 library ieee;
 use ieee.std_logic_1164.all;

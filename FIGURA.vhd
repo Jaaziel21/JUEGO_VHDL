@@ -1,3 +1,8 @@
+-- Implementación completa de la lógica para el juego, barridos, pintados, colisiones
+-- Leyberth Jaaziel Castillo Guerra	A01749505
+-- Maximiliano De La Cruz Lima	A01798048
+-- TE2002B
+
 -- Librerías
 library ieee;
 use ieee.std_logic_1164.all;
@@ -221,9 +226,9 @@ constant LADRILLO36_Y : std_logic_vector(9 downto 0) := "0010100000";  -- Fila 4
 		begin
 			-- Actualizar la posición de la raqueta cada 60Hz
 			if (CLK'EVENT and CLK = '1') and vidas > 0  and RESET = '0' then
-				if (DER = '0') and (movH <= "1011010000") then
+				if (DER = '1') and (movH <= "1011010000") then
 					movH <= movH + 5;
-				elsif (IZQ = '0') and (movH >= limizq) then
+				elsif (IZQ = '1') and (movH >= limizq) then
 					movH <= movH - 5;
 				end if;
 			end if;
